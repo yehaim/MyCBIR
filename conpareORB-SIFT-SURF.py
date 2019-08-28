@@ -1,0 +1,50 @@
+import sys
+import numpy as np
+import cv2
+import matplotlib.pyplot as plt
+import time
+img = cv2.imread('./database/2222/timg.jpeg')
+fig = plt.figure()
+plt.subplot(211)
+plt.imshow(img)
+
+
+orb = cv2.ORB_create()
+time1 = time.time()
+kp = orb.detect(img, None)
+kp, des = orb.compute(img, kp)
+print("time:" + str(time.time()-time1))
+print(des.shape)
+print(des.dtype)
+print(des.nbytes)
+print(type(des))
+img2 = cv2.drawKeypoints(img, kp, None, color=(0, 255, 0), flags=0)
+plt.subplot(212)
+plt.imshow(img2)
+plt.show()
+
+# sift = cv2.xfeatures2d.SIFT_create(nfeatures=500)
+# time1 = time.time()
+# kps, descritors = sift.detectAndCompute(img, None)
+# print("time:" + str(time.time()-time1))
+# print(descritors.shape)
+# print(descritors.dtype)
+# print(descritors.nbytes)
+# print(type(descritors))
+# img2 = cv2.drawKeypoints(img, kps, None, color=(0, 255, 0), flags=0)
+# plt.subplot(212)
+# plt.imshow(img2)
+# plt.show()
+
+# surf = cv2.xfeatures2d.SURF_create()
+# time1 = time.time()
+# kps, descritors = surf.detectAndCompute(img, None)
+# print("time:" + str(time.time()-time1))
+# print(descritors.shape)
+# print(descritors.dtype)
+# print(descritors.nbytes)
+# print(type(descritors))
+# img2 = cv2.drawKeypoints(img, kps, None, color=(0, 255, 0), flags=0)
+# plt.subplot(212)
+# plt.imshow(img2)
+# plt.show()
