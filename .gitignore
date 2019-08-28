@@ -1,0 +1,10 @@
+101_ObjectCategories/
+Compared/
+database/
+ORBFile/
+SIFTFile/
+Test/
+*.hdf5
+*.npy
+*.json
+*.pkl
