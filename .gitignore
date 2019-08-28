@@ -2,8 +2,9 @@
 Compared/
 database/
 ORBFile/
-SIFTFile/
+SIFTFile/*
 Test/
+CNNFile/
 *.hdf5
 *.npy
 *.json
